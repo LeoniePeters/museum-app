@@ -328,7 +328,9 @@ const paintings = data.artObjects
 
 for(let i = 0; i < paintings.length; i++){
     const currentPainting = paintings[i]
-    displayPainting(currentPainting)
+    if (currentPainting.webImage.width > 500 && currentPainting.principalOrFirstMaker != "Gerard van Honthorst" && currentPainting.longTitle.slice(-4) < 1800) {
+      displayPainting(currentPainting)
+    }
 }
 
 function displayPainting (painting){
